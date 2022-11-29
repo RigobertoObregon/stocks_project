@@ -10,7 +10,7 @@ for stock in stocks:
 
     results = data.json()["results"]
     for result in results:
-        print(f"stock: {stock}, date: {int(int(result['t']))} closing: {result['c']}")
+        print(f"stock: {stock}, date: {time.strftime('%y-%m-%d', time.localtime(int(int(result['t'])/1000)))} closing: {result['c']}")
         #print(f"stock: {stock}, date: {time.strftime('%y-%m-%d', int(int(result['t'])/1000))} closing: {result['c']}")
 
-#print(time.strftime('%y-%m-%d', ))
+#print(time.strftime('%y-%m-%d', time.localtime(1630036800)))
